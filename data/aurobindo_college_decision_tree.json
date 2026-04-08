@@ -1,0 +1,1229 @@
+{
+  "bot": {
+    "name": "AuroBot",
+    "college": "Sri Aurobindo College (Morning)",
+    "university": "University of Delhi",
+    "naac_grade": "B+",
+    "website": "https://www.aurobindo.du.ac.in",
+    "address": "Shivalik, Malviya Nagar, New Delhi - 110017",
+    "landmark": "Malviya Nagar Metro Station",
+    "phone": "+91-11-40536164",
+    "email": "principal@aurobindo.du.ac.in",
+    "erp_portal": "https://saksham.sac.sitslive.com/",
+    "fee_payment": "https://eazypay.icicibank.com/",
+    "social_media": {
+      "facebook": "https://www.facebook.com/people/Sri-Aurobindo-College-Morning/100057469598637/",
+      "instagram": "https://www.instagram.com/aurobindo_college/",
+      "linkedin": "https://in.linkedin.com/in/sri-aurobindo-college-m-82942520b",
+      "twitter": "https://x.com/SriAurobindo_DU",
+      "youtube": "https://www.youtube.com/channel/UCxeAieSkUjMZ23m3VNZasUg"
+    }
+  },
+  "decision_tree": {
+    "root": {
+      "id": "start",
+      "message": "👋 Welcome to Sri Aurobindo College (Morning), University of Delhi! I'm AuroBot, your virtual assistant. How can I help you today?",
+      "options": [
+        { "label": "🎓 Admissions",           "next": "admissions" },
+        { "label": "📚 Academics",             "next": "academics" },
+        { "label": "🏛️ About the College",     "next": "about" },
+        { "label": "🏗️ Infrastructure",        "next": "infrastructure" },
+        { "label": "👨‍🎓 Student's Corner",     "next": "students_corner" },
+        { "label": "🎭 Extra Curricular",      "next": "extra_curricular" },
+        { "label": "🔬 Research & Innovation", "next": "research" },
+        { "label": "📋 Administration",        "next": "administration" },
+        { "label": "📞 Contact Us",            "next": "contact" }
+      ]
+    },
+
+    "nodes": {
+
+      "admissions": {
+        "id": "admissions",
+        "message": "📋 Welcome to Admissions! What would you like to know about?",
+        "options": [
+          { "label": "Admissions 2025–26",         "next": "admissions_2025" },
+          { "label": "Course-wise Seat Availability","next": "course_seats" },
+          { "label": "Fee Structure",               "next": "fee_structure" },
+          { "label": "ECA / Sports / Ward Quota",   "next": "special_quota" },
+          { "label": "Grievance / Help Desk",       "next": "admission_grievance" },
+          { "label": "← Back",                     "next": "start" }
+        ]
+      },
+
+      "admissions_2025": {
+        "id": "admissions_2025",
+        "message": "🎓 Admissions 2025–26 at Sri Aurobindo College are processed via the University of Delhi's centralised CSAS portal. Key resources:",
+        "details": {
+          "prospectus_url":          "https://www.aurobindo.du.ac.in/prospectus",
+          "latest_updates_url":      "https://www.aurobindo.du.ac.in/latest-updates",
+          "bulletin_of_information": "https://www.aurobindo.du.ac.in/bulletin-of-information",
+          "admission_incharges_url": "https://www.aurobindo.du.ac.in/admission-in-charges",
+          "du_csas_portal":          "https://du.ac.in"
+        },
+        "response": "Admissions follow the DU CSAS (Common Seat Allocation System) process. Please check the Prospectus and Latest Updates for this year's cutoffs, seat matrix, and schedules.",
+        "options": [
+          { "label": "Prospectus",              "url": "https://www.aurobindo.du.ac.in/prospectus" },
+          { "label": "Latest Updates",          "url": "https://www.aurobindo.du.ac.in/latest-updates" },
+          { "label": "Bulletin of Information", "url": "https://www.aurobindo.du.ac.in/bulletin-of-information" },
+          { "label": "Admission In-Charges",    "url": "https://www.aurobindo.du.ac.in/admission-in-charges" },
+          { "label": "← Back to Admissions",   "next": "admissions" }
+        ]
+      },
+
+      "course_seats": {
+        "id": "course_seats",
+        "message": "🪑 Course-wise seat availability for Sri Aurobindo College:",
+        "response": "Please visit the official seat matrix page for exact seat counts per category (General, OBC, SC, ST, EWS, PwD).",
+        "details": {
+          "url": "https://www.aurobindo.du.ac.in/course-wise-seat"
+        },
+        "options": [
+          { "label": "View Course-wise Seats", "url": "https://www.aurobindo.du.ac.in/course-wise-seat" },
+          { "label": "← Back to Admissions",  "next": "admissions" }
+        ]
+      },
+
+      "fee_structure": {
+        "id": "fee_structure",
+        "message": "💰 Fee Structure for Sri Aurobindo College:",
+        "response": "Fee details vary by course and category. The official fee structure page has programme-wise breakdowns. Fee payment is done via the ICICI EazyPay portal.",
+        "details": {
+          "fee_structure_url": "https://www.aurobindo.du.ac.in/fee-structure",
+          "fee_payment_portal": "https://eazypay.icicibank.com/"
+        },
+        "options": [
+          { "label": "View Fee Structure", "url": "https://www.aurobindo.du.ac.in/fee-structure" },
+          { "label": "Pay Fees Online",    "url": "https://eazypay.icicibank.com/" },
+          { "label": "← Back to Admissions", "next": "admissions" }
+        ]
+      },
+
+      "special_quota": {
+        "id": "special_quota",
+        "message": "🏆 Special Quota Admissions – choose a category:",
+        "options": [
+          { "label": "ECA (Extra-Curricular Activities)", "next": "eca_admission" },
+          { "label": "Sports Quota",                      "next": "sports_quota" },
+          { "label": "Ward Quota",                        "next": "ward_quota" },
+          { "label": "← Back to Admissions",             "next": "admissions" }
+        ]
+      },
+
+      "eca_admission": {
+        "id": "eca_admission",
+        "message": "🎨 ECA (Extra-Curricular Activities) Admission:",
+        "response": "ECA admissions are open for students with achievements in areas like music, dance, theatre, fine arts, debate, etc. Trials and document verification are conducted by the college.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/eca-admission" },
+        "options": [
+          { "label": "ECA Admission Details", "url": "https://www.aurobindo.du.ac.in/eca-admission" },
+          { "label": "← Back",               "next": "special_quota" }
+        ]
+      },
+
+      "sports_quota": {
+        "id": "sports_quota",
+        "message": "⚽ Sports Quota Admission:",
+        "response": "Sports quota seats are reserved for students with outstanding sports achievements at state or national level. Physical trials are held by the college.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/sports-quota" },
+        "options": [
+          { "label": "Sports Quota Details", "url": "https://www.aurobindo.du.ac.in/sports-quota" },
+          { "label": "← Back",              "next": "special_quota" }
+        ]
+      },
+
+      "ward_quota": {
+        "id": "ward_quota",
+        "message": "👨‍👩‍👦 Ward Quota Admission:",
+        "response": "Ward quota is available for children of University of Delhi employees. Specific documents and processes apply.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/ward-quota" },
+        "options": [
+          { "label": "Ward Quota Details", "url": "https://www.aurobindo.du.ac.in/ward-quota" },
+          { "label": "← Back",            "next": "special_quota" }
+        ]
+      },
+
+      "admission_grievance": {
+        "id": "admission_grievance",
+        "message": "🆘 Admission Grievance & Help Desk:",
+        "response": "For any admission-related issues, you can reach the Grievance Committee or Admission Help Desk.",
+        "details": {
+          "grievance_url":  "https://www.aurobindo.du.ac.in/grievance-committee",
+          "help_desk_url":  "https://www.aurobindo.du.ac.in/help-desk",
+          "phone":          "+91-11-40536164",
+          "email":          "principal@aurobindo.du.ac.in"
+        },
+        "options": [
+          { "label": "Grievance Committee",    "url": "https://www.aurobindo.du.ac.in/grievance-committee" },
+          { "label": "Admission Help Desk",    "url": "https://www.aurobindo.du.ac.in/help-desk" },
+          { "label": "← Back to Admissions",  "next": "admissions" }
+        ]
+      },
+
+      "academics": {
+        "id": "academics",
+        "message": "📚 What academic information are you looking for?",
+        "options": [
+          { "label": "Departments",              "next": "departments" },
+          { "label": "Courses & Syllabus",       "next": "courses" },
+          { "label": "NEP Course Structure",     "next": "nep_structure" },
+          { "label": "Academic Calendar",        "next": "academic_calendar" },
+          { "label": "Time Table",               "next": "time_table" },
+          { "label": "Elective Papers",          "next": "elective_papers" },
+          { "label": "Examination",              "next": "examination" },
+          { "label": "← Back",                  "next": "start" }
+        ]
+      },
+
+      "departments": {
+        "id": "departments",
+        "message": "🏫 Sri Aurobindo College has departments across two streams:",
+        "options": [
+          { "label": "Science Departments",            "next": "science_depts" },
+          { "label": "Commerce & Humanities Departments", "next": "arts_commerce_depts" },
+          { "label": "← Back to Academics",           "next": "academics" }
+        ]
+      },
+
+      "science_depts": {
+        "id": "science_depts",
+        "message": "🔭 Science Departments at Sri Aurobindo College:",
+        "details": {
+          "departments": [
+            "Physics",
+            "Chemistry",
+            "Mathematics",
+            "Electronics",
+            "Computer Science",
+            "Botany",
+            "Zoology",
+            "Statistics"
+          ],
+          "url": "https://www.aurobindo.du.ac.in/Departments/science-departments"
+        },
+        "options": [
+          { "label": "View Science Departments", "url": "https://www.aurobindo.du.ac.in/Departments/science-departments" },
+          { "label": "← Back to Departments",   "next": "departments" }
+        ]
+      },
+
+      "arts_commerce_depts": {
+        "id": "arts_commerce_depts",
+        "message": "📊 Commerce & Humanities Departments at Sri Aurobindo College:",
+        "details": {
+          "departments": [
+            "Commerce",
+            "Economics",
+            "English",
+            "Hindi",
+            "History",
+            "Political Science",
+            "Philosophy",
+            "Sanskrit",
+            "Sociology",
+            "Physical Education"
+          ],
+          "url": "https://www.aurobindo.du.ac.in/Departments/arts-and-commerce"
+        },
+        "options": [
+          { "label": "View Commerce & Humanities Departments", "url": "https://www.aurobindo.du.ac.in/Departments/arts-and-commerce" },
+          { "label": "← Back to Departments", "next": "departments" }
+        ]
+      },
+
+      "courses": {
+        "id": "courses",
+        "message": "📖 Courses offered at Sri Aurobindo College:",
+        "details": {
+          "undergraduate_programmes": [
+            "B.Sc. (Hons.) – Physics, Chemistry, Mathematics, Electronics, Computer Science, Botany, Zoology, Statistics",
+            "B.A. (Hons.) – English, Hindi, History, Political Science, Philosophy, Sanskrit, Sociology, Economics",
+            "B.Com. (Hons.)",
+            "B.Com. (Programme)",
+            "B.A. Programme (Multi-disciplinary)"
+          ],
+          "framework": "UGCF 2022 (NEP-aligned) – 4-year undergraduate programme",
+          "url": "https://www.aurobindo.du.ac.in/courses-offered"
+        },
+        "options": [
+          { "label": "View All Courses & Syllabus", "url": "https://www.aurobindo.du.ac.in/courses-offered" },
+          { "label": "← Back to Academics",        "next": "academics" }
+        ]
+      },
+
+      "nep_structure": {
+        "id": "nep_structure",
+        "message": "🆕 NEP (National Education Policy) Course Structure:",
+        "response": "Sri Aurobindo College follows the UGCF 2022 framework under NEP. The 4-year programme includes multiple exit options and a research component in the 4th year.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/course-structure" },
+        "options": [
+          { "label": "View NEP Course Structure", "url": "https://www.aurobindo.du.ac.in/course-structure" },
+          { "label": "← Back to Academics",      "next": "academics" }
+        ]
+      },
+
+      "academic_calendar": {
+        "id": "academic_calendar",
+        "message": "📅 Academic Calendar:",
+        "response": "The academic calendar lists important dates for the academic year including the start/end of semesters, examination schedules, and holidays.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/academic-calendar" },
+        "options": [
+          { "label": "View Academic Calendar", "url": "https://www.aurobindo.du.ac.in/academic-calendar" },
+          { "label": "List of Holidays",       "url": "https://www.aurobindo.du.ac.in/holidays" },
+          { "label": "← Back to Academics",   "next": "academics" }
+        ]
+      },
+
+      "time_table": {
+        "id": "time_table",
+        "message": "🕐 Time Table:",
+        "response": "Department-wise and semester-wise timetables are published on the college website.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/time-table" },
+        "options": [
+          { "label": "View Time Table",      "url": "https://www.aurobindo.du.ac.in/time-table" },
+          { "label": "← Back to Academics", "next": "academics" }
+        ]
+      },
+
+      "elective_papers": {
+        "id": "elective_papers",
+        "message": "📝 Elective Papers – choose a type:",
+        "options": [
+          { "label": "Generic Elective (GE)",               "next": "elective_ge" },
+          { "label": "Skill Enhancement Courses (SEC)",     "next": "elective_sec" },
+          { "label": "Value Added Courses (VAC)",           "next": "elective_vac" },
+          { "label": "Ability Enhancement Courses (AEC)",  "next": "elective_aec" },
+          { "label": "← Back to Academics",                "next": "academics" }
+        ]
+      },
+
+      "elective_ge": {
+        "id": "elective_ge",
+        "message": "📚 Generic Elective (GE) Papers:",
+        "response": "GE papers allow students to study subjects outside their core discipline, broadening their academic exposure.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/generic-elective" },
+        "options": [
+          { "label": "View GE Papers",       "url": "https://www.aurobindo.du.ac.in/generic-elective" },
+          { "label": "← Back to Electives", "next": "elective_papers" }
+        ]
+      },
+
+      "elective_sec": {
+        "id": "elective_sec",
+        "message": "🛠️ Skill Enhancement Courses (SEC):",
+        "response": "SEC papers are designed to provide vocational and practical skills to students.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/skill-enhancement-course" },
+        "options": [
+          { "label": "View SEC Papers",     "url": "https://www.aurobindo.du.ac.in/skill-enhancement-course" },
+          { "label": "← Back to Electives","next": "elective_papers" }
+        ]
+      },
+
+      "elective_vac": {
+        "id": "elective_vac",
+        "message": "🌱 Value Added Courses (VAC):",
+        "response": "VAC papers focus on ethical, environmental, and societal values.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/value-added-course" },
+        "options": [
+          { "label": "View VAC Papers",     "url": "https://www.aurobindo.du.ac.in/value-added-course" },
+          { "label": "← Back to Electives","next": "elective_papers" }
+        ]
+      },
+
+      "elective_aec": {
+        "id": "elective_aec",
+        "message": "🗣️ Ability Enhancement Courses (AEC):",
+        "response": "AEC papers help students develop language and communication abilities. Offered in English and Hindi.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/ability-enhancement-courses" },
+        "options": [
+          { "label": "View AEC Papers",     "url": "https://www.aurobindo.du.ac.in/ability-enhancement-courses" },
+          { "label": "← Back to Electives","next": "elective_papers" }
+        ]
+      },
+
+      "examination": {
+        "id": "examination",
+        "message": "📋 Examination Information:",
+        "options": [
+          { "label": "General Information",            "next": "exam_general" },
+          { "label": "Internal / Continuous Assessment","next": "exam_internal" },
+          { "label": "DU Examination Wing (External)",  "next": "exam_du" },
+          { "label": "DU Datesheet Dec/Jan 2025–26",   "next": "exam_datesheet" },
+          { "label": "Unique Paper Codes of Electives", "next": "exam_upc" },
+          { "label": "← Back to Academics",            "next": "academics" }
+        ]
+      },
+
+      "exam_general": {
+        "id": "exam_general",
+        "message": "ℹ️ General Examination Information:",
+        "response": "This section covers attendance requirements, eligibility, examination norms, and DU examination guidelines.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/general-information" },
+        "options": [
+          { "label": "View General Info",      "url": "https://www.aurobindo.du.ac.in/general-information" },
+          { "label": "← Back to Examination", "next": "examination" }
+        ]
+      },
+
+      "exam_internal": {
+        "id": "exam_internal",
+        "message": "📊 Internal / Continuous Assessment:",
+        "response": "Internal assessment (IA) contributes to the final grade. Details about IA marks, tutorials, and practical components are listed here.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/internal-continuous-assessment" },
+        "options": [
+          { "label": "View Internal Assessment Info", "url": "https://www.aurobindo.du.ac.in/internal-continuous-assessment" },
+          { "label": "← Back to Examination",        "next": "examination" }
+        ]
+      },
+
+      "exam_du": {
+        "id": "exam_du",
+        "message": "🏛️ DU Examination Wing:",
+        "response": "For official DU exam forms, results, and notifications visit the DU Examination portal.",
+        "details": { "url": "https://exam.du.ac.in/exam/" },
+        "options": [
+          { "label": "Visit DU Exam Wing",     "url": "https://exam.du.ac.in/exam/" },
+          { "label": "← Back to Examination", "next": "examination" }
+        ]
+      },
+
+      "exam_datesheet": {
+        "id": "exam_datesheet",
+        "message": "📅 DU Datesheet – Dec/Jan 2025–26:",
+        "details": { "url": "https://exam.du.ac.in/exam/datesheetnd25/" },
+        "options": [
+          { "label": "View Datesheet",         "url": "https://exam.du.ac.in/exam/datesheetnd25/" },
+          { "label": "← Back to Examination", "next": "examination" }
+        ]
+      },
+
+      "exam_upc": {
+        "id": "exam_upc",
+        "message": "🔢 Unique Paper Codes (UPC) of Elective Papers:",
+        "response": "Students need UPCs when filling examination forms for elective courses.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/unique-paper-codes-of-elective-papers" },
+        "options": [
+          { "label": "View UPC List",          "url": "https://www.aurobindo.du.ac.in/unique-paper-codes-of-elective-papers" },
+          { "label": "← Back to Examination", "next": "examination" }
+        ]
+      },
+
+      "about": {
+        "id": "about",
+        "message": "🏛️ About Sri Aurobindo College – what would you like to know?",
+        "options": [
+          { "label": "The College",          "next": "about_college" },
+          { "label": "Vision & Mission",     "next": "vision_mission" },
+          { "label": "Historical Perspective","next": "history" },
+          { "label": "Principal's Message",  "next": "principal" },
+          { "label": "Annual Reports",       "next": "annual_reports" },
+          { "label": "Virtual Tour",         "next": "virtual_tour" },
+          { "label": "← Back",              "next": "start" }
+        ]
+      },
+
+      "about_college": {
+        "id": "about_college",
+        "message": "🏛️ Sri Aurobindo College (Morning) – Overview:",
+        "response": "Sri Aurobindo College is a premier institution of the University of Delhi, located in South Delhi. Accredited with NAAC Grade B+, it is named after the great philosopher-yogi Sri Aurobindo. The college imparts education blending Indian culture with modern academic practices. The Principal is Prof. Arun Chaudhary.",
+        "details": {
+          "naac_grade": "B+",
+          "principal": "Prof. Arun Chaudhary",
+          "location": "Shivalik, Malviya Nagar, New Delhi – 110017",
+          "metro": "Malviya Nagar Metro Station",
+          "url": "https://www.aurobindo.du.ac.in/about-aurobindo"
+        },
+        "options": [
+          { "label": "Read More",        "url": "https://www.aurobindo.du.ac.in/about-aurobindo" },
+          { "label": "← Back to About", "next": "about" }
+        ]
+      },
+
+      "vision_mission": {
+        "id": "vision_mission",
+        "message": "🎯 Vision & Mission of Sri Aurobindo College:",
+        "response": "The college is inspired by the philosophy of Sri Aurobindo and aims at holistic development – academic excellence, character building, intellectual curiosity, creativity, and ethical values.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/vission-mission" },
+        "options": [
+          { "label": "View Vision & Mission", "url": "https://www.aurobindo.du.ac.in/vission-mission" },
+          { "label": "← Back to About",      "next": "about" }
+        ]
+      },
+
+      "history": {
+        "id": "history",
+        "message": "📜 Historical Perspective:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/historical-perspective" },
+        "options": [
+          { "label": "View History",     "url": "https://www.aurobindo.du.ac.in/historical-perspective" },
+          { "label": "← Back to About", "next": "about" }
+        ]
+      },
+
+      "principal": {
+        "id": "principal",
+        "message": "👨‍💼 Principal – Prof. Arun Chaudhary:",
+        "response": "Prof. Arun Chaudhary is the Principal of Sri Aurobindo College (Morning). He leads the college with a focus on holistic education, research, and student welfare.",
+        "details": {
+          "name": "Prof. Arun Chaudhary",
+          "email": "principal@aurobindo.du.ac.in",
+          "url": "https://www.aurobindo.du.ac.in/principal-message"
+        },
+        "options": [
+          { "label": "Read Principal's Message", "url": "https://www.aurobindo.du.ac.in/principal-message" },
+          { "label": "← Back to About",          "next": "about" }
+        ]
+      },
+
+      "annual_reports": {
+        "id": "annual_reports",
+        "message": "📄 Annual Reports of Sri Aurobindo College:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/annual-report" },
+        "options": [
+          { "label": "View Annual Reports", "url": "https://www.aurobindo.du.ac.in/annual-report" },
+          { "label": "← Back to About",    "next": "about" }
+        ]
+      },
+
+      "virtual_tour": {
+        "id": "virtual_tour",
+        "message": "🏫 Take a Virtual Tour of Sri Aurobindo College campus:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/virtual-tour" },
+        "options": [
+          { "label": "Start Virtual Tour", "url": "https://www.aurobindo.du.ac.in/virtual-tour" },
+          { "label": "← Back to About",   "next": "about" }
+        ]
+      },
+
+      "infrastructure": {
+        "id": "infrastructure",
+        "message": "🏗️ Infrastructure & Facilities – what are you looking for?",
+        "options": [
+          { "label": "Library",         "next": "library" },
+          { "label": "Laboratories",    "next": "laboratories" },
+          { "label": "IT Infrastructure","next": "it_infra" },
+          { "label": "Classrooms",      "next": "classrooms" },
+          { "label": "Campus",          "next": "campus" },
+          { "label": "Facilities",      "next": "facilities" },
+          { "label": "Safety & Security","next": "safety" },
+          { "label": "← Back",         "next": "start" }
+        ]
+      },
+
+      "library": {
+        "id": "library",
+        "message": "📚 College Library:",
+        "response": "The library provides access to a wide range of books, journals, and digital resources. Faculty can access One Nation One Subscription (ONOS) e-resources.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/library" },
+        "options": [
+          { "label": "Library Details",    "url": "https://www.aurobindo.du.ac.in/library" },
+          { "label": "← Back to Infrastructure","next": "infrastructure" }
+        ]
+      },
+
+      "laboratories": {
+        "id": "laboratories",
+        "message": "🔬 Laboratories:",
+        "response": "The college has well-equipped science laboratories for Physics, Chemistry, Electronics, Computer Science, Botany, Zoology, and more.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/laboratories" },
+        "options": [
+          { "label": "View Laboratories", "url": "https://www.aurobindo.du.ac.in/laboratories" },
+          { "label": "← Back to Infrastructure","next": "infrastructure" }
+        ]
+      },
+
+      "it_infra": {
+        "id": "it_infra",
+        "message": "💻 IT Infrastructure:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/it-infrastructure" },
+        "options": [
+          { "label": "View IT Infrastructure", "url": "https://www.aurobindo.du.ac.in/it-infrastructure" },
+          { "label": "← Back to Infrastructure","next": "infrastructure" }
+        ]
+      },
+
+      "classrooms": {
+        "id": "classrooms",
+        "message": "🏫 Classrooms:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/classroom" },
+        "options": [
+          { "label": "View Classroom Info", "url": "https://www.aurobindo.du.ac.in/classroom" },
+          { "label": "← Back to Infrastructure","next": "infrastructure" }
+        ]
+      },
+
+      "campus": {
+        "id": "campus",
+        "message": "🌳 Campus:",
+        "response": "Sri Aurobindo College's campus is located at Shivalik, Malviya Nagar – a serene and accessible location near Malviya Nagar Metro Station.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/campus" },
+        "options": [
+          { "label": "View Campus Details", "url": "https://www.aurobindo.du.ac.in/campus" },
+          { "label": "← Back to Infrastructure","next": "infrastructure" }
+        ]
+      },
+
+      "facilities": {
+        "id": "facilities",
+        "message": "🏪 Campus Facilities – choose one:",
+        "options": [
+          { "label": "Canteen",           "next": "facility_canteen" },
+          { "label": "Medical Room",      "next": "facility_medical" },
+          { "label": "Sports Facilities", "next": "facility_sports" },
+          { "label": "Girls Common Room", "next": "facility_gcr" },
+          { "label": "Seminar Room",      "next": "facility_seminar" },
+          { "label": "Bank",             "next": "facility_bank" },
+          { "label": "Photostat Shop",   "next": "facility_photo" },
+          { "label": "← Back to Infrastructure","next": "infrastructure" }
+        ]
+      },
+
+      "facility_canteen": {
+        "id": "facility_canteen",
+        "message": "🍽️ College Canteen:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/canteen" },
+        "options": [
+          { "label": "Canteen Details",      "url": "https://www.aurobindo.du.ac.in/canteen" },
+          { "label": "← Back to Facilities","next": "facilities" }
+        ]
+      },
+
+      "facility_medical": {
+        "id": "facility_medical",
+        "message": "🏥 Medical Room:",
+        "response": "The college has a medical room with a part-time allopathic doctor and nurse for student health needs.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/medical-room" },
+        "options": [
+          { "label": "Medical Room Info",    "url": "https://www.aurobindo.du.ac.in/medical-room" },
+          { "label": "← Back to Facilities","next": "facilities" }
+        ]
+      },
+
+      "facility_sports": {
+        "id": "facility_sports",
+        "message": "🏋️ Sports Facilities:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/sports-facilities" },
+        "options": [
+          { "label": "Sports Facilities Info","url": "https://www.aurobindo.du.ac.in/sports-facilities" },
+          { "label": "← Back to Facilities", "next": "facilities" }
+        ]
+      },
+
+      "facility_gcr": {
+        "id": "facility_gcr",
+        "message": "👩 Girls Common Room:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/girls-common-room" },
+        "options": [
+          { "label": "Girls Common Room Info","url": "https://www.aurobindo.du.ac.in/girls-common-room" },
+          { "label": "← Back to Facilities", "next": "facilities" }
+        ]
+      },
+
+      "facility_seminar": {
+        "id": "facility_seminar",
+        "message": "🎤 Seminar Room:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/seminar-room" },
+        "options": [
+          { "label": "Seminar Room Info",    "url": "https://www.aurobindo.du.ac.in/seminar-room" },
+          { "label": "← Back to Facilities","next": "facilities" }
+        ]
+      },
+
+      "facility_bank": {
+        "id": "facility_bank",
+        "message": "🏦 Bank on Campus:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/bank" },
+        "options": [
+          { "label": "Bank Details",         "url": "https://www.aurobindo.du.ac.in/bank" },
+          { "label": "← Back to Facilities","next": "facilities" }
+        ]
+      },
+
+      "facility_photo": {
+        "id": "facility_photo",
+        "message": "🖨️ Photostat Shop:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/photostat-shop" },
+        "options": [
+          { "label": "Photostat Shop Info",  "url": "https://www.aurobindo.du.ac.in/photostat-shop" },
+          { "label": "← Back to Facilities","next": "facilities" }
+        ]
+      },
+
+      "safety": {
+        "id": "safety",
+        "message": "🔒 Safety & Security:",
+        "response": "The college maintains strict security norms. Unauthorized entry into college premises is prohibited.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/safety-and-securty" },
+        "options": [
+          { "label": "Safety & Security Info","url": "https://www.aurobindo.du.ac.in/safety-and-securty" },
+          { "label": "← Back to Infrastructure","next": "infrastructure" }
+        ]
+      },
+
+      "students_corner": {
+        "id": "students_corner",
+        "message": "👨‍🎓 Student's Corner – what do you need help with?",
+        "options": [
+          { "label": "Placement & Internship",     "next": "placement" },
+          { "label": "Scholarships",               "next": "scholarships" },
+          { "label": "Grievance Redressal",        "next": "grievance" },
+          { "label": "Internal Assessment",        "next": "internal_assessment" },
+          { "label": "Career Counseling",          "next": "career_counseling" },
+          { "label": "Enquiry Desk",               "next": "enquiry_desk" },
+          { "label": "Alumni",                     "next": "alumni" },
+          { "label": "← Back",                    "next": "start" }
+        ]
+      },
+
+      "placement": {
+        "id": "placement",
+        "message": "💼 Placement & Internship Cell:",
+        "response": "Sri Aurobindo College has a dedicated Placement Cell. Top recruiters include Accenture, HDFC Bank, Asian Paints, Havells, Hero, and many more.",
+        "details": {
+          "top_recruiters": [
+            "Accenture", "HDFC Bank", "Asian Paints", "Havells", "Hero",
+            "HCC", "Cloud Analogy", "ANR Software", "Ceasefire Industries",
+            "360 Degree Cloud"
+          ],
+          "url": "https://www.aurobindo.du.ac.in/placement-and-internship"
+        },
+        "options": [
+          { "label": "Placement & Internship Details","url": "https://www.aurobindo.du.ac.in/placement-and-internship" },
+          { "label": "← Back to Student Corner",     "next": "students_corner" }
+        ]
+      },
+
+      "scholarships": {
+        "id": "scholarships",
+        "message": "🏅 Scholarships available at Sri Aurobindo College:",
+        "response": "The college offers the Student Aid Fund Scholarship for meritorious and financially needy students. Various government and DU scholarships are also facilitated.",
+        "details": {
+          "scholarships_available": [
+            "Student Aid Fund Scholarship (College)",
+            "Post-Matric Scholarship (SC/ST – Government of India)",
+            "Prime Minister's Scholarship Scheme (PMSSS)",
+            "University of Delhi Need-cum-Merit Scholarship"
+          ],
+          "url": "https://www.aurobindo.du.ac.in/scholarships",
+          "pmsss_nodal_officer_url": "https://www.aurobindo.du.ac.in/pmsss"
+        },
+        "options": [
+          { "label": "View Scholarship Details",  "url": "https://www.aurobindo.du.ac.in/scholarships" },
+          { "label": "PMSSS Nodal Officer Info",  "url": "https://www.aurobindo.du.ac.in/pmsss" },
+          { "label": "← Back to Student Corner", "next": "students_corner" }
+        ]
+      },
+
+      "grievance": {
+        "id": "grievance",
+        "message": "🆘 Grievance Redressal – choose a category:",
+        "options": [
+          { "label": "Internal Complaint Committee (ICC)", "next": "icc" },
+          { "label": "Student Grievance Committee",       "next": "student_grievance" },
+          { "label": "Anti Ragging",                     "next": "anti_ragging" },
+          { "label": "← Back to Student Corner",        "next": "students_corner" }
+        ]
+      },
+
+      "icc": {
+        "id": "icc",
+        "message": "⚖️ Internal Complaint Committee (ICC):",
+        "response": "The ICC handles complaints related to sexual harassment in the workplace/campus as per the POSH Act 2013.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/internal-complaint-committee" },
+        "options": [
+          { "label": "ICC Details",              "url": "https://www.aurobindo.du.ac.in/internal-complaint-committee" },
+          { "label": "← Back to Grievance",     "next": "grievance" }
+        ]
+      },
+
+      "student_grievance": {
+        "id": "student_grievance",
+        "message": "📋 Student Grievance Committee:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/student-corner-grievance-committee" },
+        "options": [
+          { "label": "Student Grievance Details","url": "https://www.aurobindo.du.ac.in/student-corner-grievance-committee" },
+          { "label": "← Back to Grievance",    "next": "grievance" }
+        ]
+      },
+
+      "anti_ragging": {
+        "id": "anti_ragging",
+        "message": "🚫 Anti-Ragging Committee:",
+        "response": "Ragging is strictly prohibited at Sri Aurobindo College and University of Delhi. Report ragging immediately.",
+        "details": {
+          "url": "https://www.aurobindo.du.ac.in/anti-ragging",
+          "du_anti_ragging_helpline": "1800-180-5522",
+          "ugc_anti_ragging_helpline": "1800-180-5522"
+        },
+        "options": [
+          { "label": "Anti-Ragging Details",  "url": "https://www.aurobindo.du.ac.in/anti-ragging" },
+          { "label": "← Back to Grievance",  "next": "grievance" }
+        ]
+      },
+
+      "internal_assessment": {
+        "id": "internal_assessment",
+        "message": "📝 Internal Assessment:",
+        "response": "Students can view their internal assessment / tutorial marks via the ERP portal. Improvement of marks can be requested within the stipulated deadline.",
+        "details": {
+          "erp_portal": "https://saksham.sac.sitslive.com/",
+          "url": "https://www.aurobindo.du.ac.in/internal-assessment"
+        },
+        "options": [
+          { "label": "Internal Assessment Info","url": "https://www.aurobindo.du.ac.in/internal-assessment" },
+          { "label": "ERP / Student Portal",   "url": "https://saksham.sac.sitslive.com/" },
+          { "label": "← Back to Student Corner","next": "students_corner" }
+        ]
+      },
+
+      "career_counseling": {
+        "id": "career_counseling",
+        "message": "🎯 Career Counseling & Mentorship Cell:",
+        "response": "The college offers career guidance sessions, mentorship programmes, and connects students with industry professionals.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/career-counselling-and-mentorship" },
+        "options": [
+          { "label": "Career Counseling Details","url": "https://www.aurobindo.du.ac.in/career-counselling-and-mentorship" },
+          { "label": "← Back to Student Corner","next": "students_corner" }
+        ]
+      },
+
+      "enquiry_desk": {
+        "id": "enquiry_desk",
+        "message": "💬 Enquiry / Help Desk:",
+        "response": "For any college-related queries, please visit or contact the Enquiry Desk.",
+        "details": {
+          "phone": "+91-11-40536164",
+          "email": "principal@aurobindo.du.ac.in",
+          "url": "https://www.aurobindo.du.ac.in/enquiry-desk"
+        },
+        "options": [
+          { "label": "Enquiry Desk Info",       "url": "https://www.aurobindo.du.ac.in/enquiry-desk" },
+          { "label": "← Back to Student Corner","next": "students_corner" }
+        ]
+      },
+
+      "alumni": {
+        "id": "alumni",
+        "message": "🎓 Sri Aurobindo College Alumni:",
+        "response": "Our distinguished alumni include politicians, civil servants, defence officers, academics, and business leaders. Notable alumni: Virendra Sachdeva, Manisha Saxena, Neeraj Pandey, and many more.",
+        "details": {
+          "notable_alumni": [
+            "Virendra Sachdeva",
+            "Manisha Saxena",
+            "Shubham Shrivastava",
+            "Neeraj Pandey",
+            "Rajiv Ranjan",
+            "Arvind Hanglem"
+          ],
+          "url": "https://www.aurobindo.du.ac.in/alumni"
+        },
+        "options": [
+          { "label": "View Alumni Network",     "url": "https://www.aurobindo.du.ac.in/alumni" },
+          { "label": "← Back to Student Corner","next": "students_corner" }
+        ]
+      },
+
+      "extra_curricular": {
+        "id": "extra_curricular",
+        "message": "🎭 Extra Curricular Activities at Sri Aurobindo College:",
+        "options": [
+          { "label": "Student Union",       "next": "student_union" },
+          { "label": "Student Societies",   "next": "student_societies" },
+          { "label": "NCC",                "next": "ncc" },
+          { "label": "NSS",                "next": "nss" },
+          { "label": "Sports",             "next": "sports" },
+          { "label": "Student Clubs/Cells", "next": "student_clubs" },
+          { "label": "Cultural Events",    "next": "cultural_events" },
+          { "label": "Spic Macay",         "next": "spic_macay" },
+          { "label": "← Back",            "next": "start" }
+        ]
+      },
+
+      "student_union": {
+        "id": "student_union",
+        "message": "🗳️ Student Union:",
+        "response": "The Student Union of Sri Aurobindo College represents students' interests and organises various events and activities throughout the year.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/student-union" },
+        "options": [
+          { "label": "Student Union Details",    "url": "https://www.aurobindo.du.ac.in/student-union" },
+          { "label": "← Back to Extra Curricular","next": "extra_curricular" }
+        ]
+      },
+
+      "student_societies": {
+        "id": "student_societies",
+        "message": "🎭 Student Societies:",
+        "response": "The college has a rich ecosystem of student societies covering academics, arts, culture, and more.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/student-societies" },
+        "options": [
+          { "label": "View Student Societies",   "url": "https://www.aurobindo.du.ac.in/student-societies" },
+          { "label": "← Back to Extra Curricular","next": "extra_curricular" }
+        ]
+      },
+
+      "ncc": {
+        "id": "ncc",
+        "message": "🪖 National Cadet Corps (NCC):",
+        "response": "NCC at Sri Aurobindo College trains students in discipline, leadership, and national service. It is open to interested students subject to selection.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/ncc" },
+        "options": [
+          { "label": "NCC Details",              "url": "https://www.aurobindo.du.ac.in/ncc" },
+          { "label": "← Back to Extra Curricular","next": "extra_curricular" }
+        ]
+      },
+
+      "nss": {
+        "id": "nss",
+        "message": "🤝 National Service Scheme (NSS):",
+        "response": "NSS at Sri Aurobindo College engages students in community service, social activities, and camps. NSS students have participated in Republic Day Parade camps.",
+        "details": {
+          "notable_achievement": "NSS Vice President Rishu Raj selected for North Zone Pre-Republic Day Parade Camp.",
+          "url": "https://www.aurobindo.du.ac.in/nss"
+        },
+        "options": [
+          { "label": "NSS Details",              "url": "https://www.aurobindo.du.ac.in/nss" },
+          { "label": "← Back to Extra Curricular","next": "extra_curricular" }
+        ]
+      },
+
+      "sports": {
+        "id": "sports",
+        "message": "⚽ Sports at Sri Aurobindo College:",
+        "response": "Our students have excelled in sports at national and international levels – including gold medals in Archery, Shooting, Trampoline, and top ranks in UPSC CDS.",
+        "details": {
+          "recent_achievements": [
+            "Ayush Rao – Gold Medal, All India University Games 2024-25 & National Gold in Archery",
+            "Sumedha Sharma – Gold & Bronze at 67th National Shooting Championship",
+            "Manish Singh Rawat – Gold at Senior National Trampoline Championship",
+            "Manvi Rawat – Bronze at Senior Taekwondo Nationals & Gold at Cadet Champion of Champions 2025"
+          ],
+          "url": "https://www.aurobindo.du.ac.in/sports"
+        },
+        "options": [
+          { "label": "Sports Details",           "url": "https://www.aurobindo.du.ac.in/sports" },
+          { "label": "← Back to Extra Curricular","next": "extra_curricular" }
+        ]
+      },
+
+      "student_clubs": {
+        "id": "student_clubs",
+        "message": "🔬 Student Clubs & Cells:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/student-clubs-cells" },
+        "options": [
+          { "label": "View Clubs & Cells",       "url": "https://www.aurobindo.du.ac.in/student-clubs-cells" },
+          { "label": "← Back to Extra Curricular","next": "extra_curricular" }
+        ]
+      },
+
+      "cultural_events": {
+        "id": "cultural_events",
+        "message": "🎉 Cultural Events:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/cultural-events" },
+        "options": [
+          { "label": "Cultural Events",          "url": "https://www.aurobindo.du.ac.in/cultural-events" },
+          { "label": "← Back to Extra Curricular","next": "extra_curricular" }
+        ]
+      },
+
+      "spic_macay": {
+        "id": "spic_macay",
+        "message": "🎵 SPIC MACAY (Society for the Promotion of Indian Classical Music And Culture Amongst Youth):",
+        "details": { "url": "https://www.aurobindo.du.ac.in/spic-macay" },
+        "options": [
+          { "label": "SPIC MACAY Details",       "url": "https://www.aurobindo.du.ac.in/spic-macay" },
+          { "label": "← Back to Extra Curricular","next": "extra_curricular" }
+        ]
+      },
+
+      "research": {
+        "id": "research",
+        "message": "🔬 Research & Innovation at Sri Aurobindo College:",
+        "options": [
+          { "label": "Research Centers",         "next": "research_centers" },
+          { "label": "Journals",                 "next": "journals" },
+          { "label": "Conferences",              "next": "conferences" },
+          { "label": "Research Projects",        "next": "research_projects" },
+          { "label": "Undergraduate Research",  "next": "undergrad_research" },
+          { "label": "Publications & Patents",   "next": "publications" },
+          { "label": "Collaborations & MOUs",    "next": "collaborations" },
+          { "label": "← Back",                  "next": "start" }
+        ]
+      },
+
+      "research_centers": {
+        "id": "research_centers",
+        "message": "🏛️ Research Centers:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/center" },
+        "options": [
+          { "label": "View Research Centers", "url": "https://www.aurobindo.du.ac.in/center" },
+          { "label": "← Back to Research",   "next": "research" }
+        ]
+      },
+
+      "journals": {
+        "id": "journals",
+        "message": "📰 Aurobindo College Journals:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/journals" },
+        "options": [
+          { "label": "View Journals",       "url": "https://www.aurobindo.du.ac.in/journals" },
+          { "label": "← Back to Research", "next": "research" }
+        ]
+      },
+
+      "conferences": {
+        "id": "conferences",
+        "message": "🎤 Conferences & Workshops:",
+        "response": "Sri Aurobindo College regularly organises national and international conferences. Recent example: International Conference on 'Empowering Rural Communities – Agrarian Politics and the Legacy of Chaudhary Charan Singh towards Viksit Bharat'.",
+        "details": { "url": "https://www.aurobindo.du.ac.in/conferences" },
+        "options": [
+          { "label": "View Conferences",    "url": "https://www.aurobindo.du.ac.in/conferences" },
+          { "label": "Workshops Organized", "url": "https://www.aurobindo.du.ac.in/workshops-organized" },
+          { "label": "← Back to Research", "next": "research" }
+        ]
+      },
+
+      "research_projects": {
+        "id": "research_projects",
+        "message": "📊 Research Projects:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/research-projects" },
+        "options": [
+          { "label": "View Research Projects","url": "https://www.aurobindo.du.ac.in/research-projects" },
+          { "label": "← Back to Research",   "next": "research" }
+        ]
+      },
+
+      "undergrad_research": {
+        "id": "undergrad_research",
+        "message": "🧑‍🔬 Undergraduate Research:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/undergraduate-research" },
+        "options": [
+          { "label": "Undergraduate Research Info","url": "https://www.aurobindo.du.ac.in/undergraduate-research" },
+          { "label": "← Back to Research",        "next": "research" }
+        ]
+      },
+
+      "publications": {
+        "id": "publications",
+        "message": "📄 Publications & Patents:",
+        "options": [
+          { "label": "Research Publications","url": "https://www.aurobindo.du.ac.in/research-publications" },
+          { "label": "Books Published",      "url": "https://www.aurobindo.du.ac.in/book-published" },
+          { "label": "Patents",              "url": "https://www.aurobindo.du.ac.in/patent" },
+          { "label": "← Back to Research",  "next": "research" }
+        ]
+      },
+
+      "collaborations": {
+        "id": "collaborations",
+        "message": "🤝 Collaborations & MOUs:",
+        "details": {
+          "collaborations_url": "https://www.aurobindo.du.ac.in/collaborations",
+          "mous_url": "https://www.aurobindo.du.ac.in/mous"
+        },
+        "options": [
+          { "label": "View Collaborations", "url": "https://www.aurobindo.du.ac.in/collaborations" },
+          { "label": "List of MOUs",        "url": "https://www.aurobindo.du.ac.in/mous" },
+          { "label": "← Back to Research", "next": "research" }
+        ]
+      },
+
+      "administration": {
+        "id": "administration",
+        "message": "🏛️ Administration – what would you like to know?",
+        "options": [
+          { "label": "Governing Body",       "next": "governing_body" },
+          { "label": "Important Functionaries","next": "functionaries" },
+          { "label": "Non-Teaching Staff",   "next": "non_teaching" },
+          { "label": "Staff Council Committees","next": "staff_committees" },
+          { "label": "Organogram",           "next": "organogram" },
+          { "label": "Roster / Seniority",   "next": "roster" },
+          { "label": "RTI",                  "next": "rti" },
+          { "label": "Policies",             "next": "policies" },
+          { "label": "← Back",              "next": "start" }
+        ]
+      },
+
+      "governing_body": {
+        "id": "governing_body",
+        "message": "🏛️ Governing Body:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/governing-body" },
+        "options": [
+          { "label": "Governing Body Details",  "url": "https://www.aurobindo.du.ac.in/governing-body" },
+          { "label": "← Back to Administration","next": "administration" }
+        ]
+      },
+
+      "functionaries": {
+        "id": "functionaries",
+        "message": "👥 Important Functionaries & Teacher-In-Charges:",
+        "details": {
+          "functionaries_url": "https://www.aurobindo.du.ac.in/important-functionaries",
+          "tic_url": "https://www.aurobindo.du.ac.in/teacher-in-charge"
+        },
+        "options": [
+          { "label": "Important Functionaries","url": "https://www.aurobindo.du.ac.in/important-functionaries" },
+          { "label": "Teacher In-Charges",     "url": "https://www.aurobindo.du.ac.in/teacher-in-charge" },
+          { "label": "← Back to Administration","next": "administration" }
+        ]
+      },
+
+      "non_teaching": {
+        "id": "non_teaching",
+        "message": "👷 Non-Teaching Staff:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/non-teaching-staff" },
+        "options": [
+          { "label": "Non-Teaching Staff Info","url": "https://www.aurobindo.du.ac.in/non-teaching-staff" },
+          { "label": "← Back to Administration","next": "administration" }
+        ]
+      },
+
+      "staff_committees": {
+        "id": "staff_committees",
+        "message": "📋 Staff Council Committees:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/staff-council-committees" },
+        "options": [
+          { "label": "Staff Committees Info",  "url": "https://www.aurobindo.du.ac.in/staff-council-committees" },
+          { "label": "← Back to Administration","next": "administration" }
+        ]
+      },
+
+      "organogram": {
+        "id": "organogram",
+        "message": "📊 College Organogram:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/organogram" },
+        "options": [
+          { "label": "View Organogram",         "url": "https://www.aurobindo.du.ac.in/organogram" },
+          { "label": "← Back to Administration","next": "administration" }
+        ]
+      },
+
+      "roster": {
+        "id": "roster",
+        "message": "📋 Roster & Seniority List:",
+        "details": {
+          "roster_url": "https://www.aurobindo.du.ac.in/roster",
+          "seniority_url": "https://www.aurobindo.du.ac.in/seniority-list"
+        },
+        "options": [
+          { "label": "Roster",                  "url": "https://www.aurobindo.du.ac.in/roster" },
+          { "label": "Seniority List",           "url": "https://www.aurobindo.du.ac.in/seniority-list" },
+          { "label": "← Back to Administration","next": "administration" }
+        ]
+      },
+
+      "rti": {
+        "id": "rti",
+        "message": "📜 Right to Information (RTI):",
+        "response": "RTI applications can be submitted as per the RTI Act 2005 to the Public Information Officer of the college.",
+        "options": [
+          { "label": "← Back to Administration","next": "administration" }
+        ]
+      },
+
+      "policies": {
+        "id": "policies",
+        "message": "📋 College Policies:",
+        "details": { "url": "https://www.aurobindo.du.ac.in/policy" },
+        "options": [
+          { "label": "View Policies",            "url": "https://www.aurobindo.du.ac.in/policy" },
+          { "label": "← Back to Administration","next": "administration" }
+        ]
+      },
+
+      "contact": {
+        "id": "contact",
+        "message": "📞 Contact Sri Aurobindo College (Morning):",
+        "details": {
+          "address": "Shivalik, Malviya Nagar, New Delhi – 110017",
+          "landmark": "Malviya Nagar Metro Station",
+          "phone": "+91-11-40536164",
+          "email": "principal@aurobindo.du.ac.in",
+          "website": "https://www.aurobindo.du.ac.in",
+          "erp_portal": "https://saksham.sac.sitslive.com/",
+          "naac": "https://www.aurobindo.du.ac.in/naac",
+          "nirf": "https://www.aurobindo.du.ac.in/nirf",
+          "social_media": {
+            "facebook": "https://www.facebook.com/people/Sri-Aurobindo-College-Morning/100057469598637/",
+            "instagram": "https://www.instagram.com/aurobindo_college/",
+            "linkedin": "https://in.linkedin.com/in/sri-aurobindo-college-m-82942520b",
+            "twitter": "https://x.com/SriAurobindo_DU",
+            "youtube": "https://www.youtube.com/channel/UCxeAieSkUjMZ23m3VNZasUg"
+          }
+        },
+        "options": [
+          { "label": "Visit Website",   "url": "https://www.aurobindo.du.ac.in" },
+          { "label": "Email Us",        "url": "mailto:principal@aurobindo.du.ac.in" },
+          { "label": "Student ERP",     "url": "https://saksham.sac.sitslive.com/" },
+          { "label": "NAAC Info",       "url": "https://www.aurobindo.du.ac.in/naac" },
+          { "label": "NIRF Info",       "url": "https://www.aurobindo.du.ac.in/nirf" },
+          { "label": "← Back",         "next": "start" }
+        ]
+      }
+
+    }
+  },
+
+  "faq": [
+    {
+      "question": "What is the NAAC grade of Sri Aurobindo College?",
+      "answer": "Sri Aurobindo College (Morning) has been accredited with NAAC Grade B+."
+    },
+    {
+      "question": "Who is the Principal of Sri Aurobindo College?",
+      "answer": "Prof. Arun Chaudhary is the current Principal of Sri Aurobindo College (Morning)."
+    },
+    {
+      "question": "Where is Sri Aurobindo College located?",
+      "answer": "Sri Aurobindo College is located at Shivalik, Malviya Nagar, New Delhi – 110017. The nearest metro station is Malviya Nagar Metro Station."
+    },
+    {
+      "question": "What is the contact number of Sri Aurobindo College?",
+      "answer": "+91-11-40536164"
+    },
+    {
+      "question": "What is the email of the Principal?",
+      "answer": "principal@aurobindo.du.ac.in"
+    },
+    {
+      "question": "How can I apply for admission?",
+      "answer": "Admissions at Sri Aurobindo College are processed through the University of Delhi CSAS portal. Visit https://www.aurobindo.du.ac.in/latest-updates for the latest admission information."
+    },
+    {
+      "question": "Does the college offer B.Com (Hons)?",
+      "answer": "Yes, Sri Aurobindo College offers B.Com (Hons) and B.Com (Programme)."
+    },
+    {
+      "question": "How do I pay fees?",
+      "answer": "Fees can be paid online through the ICICI EazyPay portal: https://eazypay.icicibank.com/"
+    },
+    {
+      "question": "What is the ERP / student portal?",
+      "answer": "The ERP portal is Saksham: https://saksham.sac.sitslive.com/"
+    },
+    {
+      "question": "Does the college have NCC and NSS?",
+      "answer": "Yes, Sri Aurobindo College has both NCC (National Cadet Corps) and NSS (National Service Scheme) units."
+    },
+    {
+      "question": "Who are the top recruiters at Sri Aurobindo College?",
+      "answer": "Top recruiters include Accenture, HDFC Bank, Asian Paints, Havells, Hero, HCC, Cloud Analogy, and others."
+    },
+    {
+      "question": "What is the anti-ragging helpline?",
+      "answer": "The UGC Anti-Ragging helpline number is 1800-180-5522. Visit https://www.aurobindo.du.ac.in/anti-ragging for more details."
+    }
+  ],
+
+  "metadata": {
+    "version": "1.0",
+    "generated_on": "2026-03-04",
+    "source": "https://www.aurobindo.du.ac.in",
+    "purpose": "Decision Tree JSON for Sri Aurobindo College (Morning) Chatbot",
+    "coverage": [
+      "Admissions", "Academics", "Departments", "Courses", "Examination",
+      "Infrastructure", "Facilities", "Students Corner", "Placement",
+      "Scholarships", "Grievance", "Extra Curricular", "NCC", "NSS",
+      "Sports", "Research", "Administration", "Contact"
+    ]
+  }
+}

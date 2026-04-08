@@ -1,0 +1,2 @@
+AuroBot is a Flask-based chatbot that serves as a virtual assistant for Sri Aurobindo College. It helps students, parents, and visitors navigate college information — admissions, courses, departments, facilities, scholarships, placements, and more — through an intuitive button-driven interface backed by a structured JSON knowledge base.
+This project is being actively developed with progressive NLP and data science enhancements, transforming it from a rule-based decision tree into an intelligent, analytics-driven assistant.
